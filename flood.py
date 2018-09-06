@@ -31,6 +31,8 @@ start = (0,0)
 img.putpixel(start, fillcolor)
 boundary.append(start)
 
+imgid = 0
+
 for i in range(5300):
 	print(i)
 	
@@ -44,4 +46,5 @@ for i in range(5300):
 	newboundary = []
 	
 	if i%20==0:
-		img.save("anim/%i.jpg" % i)
+		img.save("anim/%i.jpg" % imgid)
+		imgid += 1
