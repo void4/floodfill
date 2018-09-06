@@ -14,5 +14,6 @@ ls | awk '/^([0-9]+)\.jpg$/ { printf("%s %05d.jpg\n", $0, $1) }' | xargs -n2 mv
 #convert -resize 25% -delay 20 -loop 0  *.jpg ../animated.gif
 # Convert to webm
 ffmpeg -framerate 25 -f image2 -i %05d.jpg -c:v libvpx-vp9 -pix_fmt yuva420p ../output.webm
-
+# Or shorter:
+ffmpeg -i %05d.jpg output.webm
 ```
